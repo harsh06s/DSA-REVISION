@@ -39,7 +39,7 @@ public class full{
 
 
 
-    static boolean  isSorted(int [] arr ,int x){
+    static boolean  isSorted(int[] arr ,int x){
         for (int i = 1; i < arr.length; i++) {
             if (arr[i-1]>arr[i]){
                 return false;
@@ -47,6 +47,22 @@ public class full{
             
         } 
         return true;
+    }
+
+
+    static int pairsSum(int[] arr, int target){
+        int count= 0;
+        for (int i=0; i<arr.length;i++){
+            for(int j=i+1; j<arr.length;j++){
+                
+                if(arr[i] + arr[j]== target){
+                    count++;
+                    
+                }
+            }
+
+        }
+         return count;
     }
 
 
@@ -59,13 +75,14 @@ public class full{
 
     public static void main(String [] args){
 
-        int t =5;
-        int arr [] ={1,4,5,6,8,4};
+        int t =7;
+        int arr [] ={4,6,3,5,8,2};
 
-        if(isSorted(arr, t)){
-            
-        }
-        
+        // if(isSorted(arr, t)){
+        //     System.out.println("sorted");
+        // }
+
+        System.out.println( pairsSum(arr, t));
 
     }
 }
