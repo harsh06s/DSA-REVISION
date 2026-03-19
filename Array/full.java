@@ -67,6 +67,41 @@ public class full{
 
 
 
+    static int tripletSum(int[] arr, int target){
+
+        int count=0;
+        for (int i =0 ;i<arr.length; i++) {
+            for (int j=i+1; j<arr.length; j++){
+                for(int k=j+1; k<arr.length; k++){
+                    if (arr[i]+arr[j]+arr[k]==target){
+                        count++;
+                    }
+                }
+            }
+            
+        }   return count;
+    }
+
+
+
+
+
+    static void findUnique(int arr[], int target){
+        for (int i=0; i<arr.length; i++){
+            for (int j=i+1; j<arr.length;j++){
+                if (arr[i]==arr[j]){
+                    arr[i]=-1;
+                    arr[j] =-1;
+
+                }
+            }
+
+        }for(int i=0; i<arr.length;i++){
+            if (arr[i]>0){
+                System.out.print(arr[i]+",");
+            }
+        } System.out.println("");
+    } 
 
 
 
@@ -75,14 +110,14 @@ public class full{
 
     public static void main(String [] args){
 
-        int t =7;
-        int arr [] ={4,6,3,5,8,2};
+        int t =12;
+        int arr [] ={1,4,5,6,3,3,6};
 
         // if(isSorted(arr, t)){
         //     System.out.println("sorted");
         // }
 
-        System.out.println( pairsSum(arr, t));
+        findUnique(arr, t);
 
     }
 }
