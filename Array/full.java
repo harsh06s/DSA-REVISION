@@ -1,3 +1,4 @@
+import java.util.*;
 
 public class full{
 
@@ -105,19 +106,83 @@ public class full{
 
 
 
+    static int findMax(int[]arr){
+        int max = Integer.MIN_VALUE;
+        for (int i=0; i<arr.length; i++){
+            if(arr[i]>max){
+                max = arr[i];
+            }
+        } return max;
+    }
+
+
+    static int findSecondMax(int arr[]){
+
+        int max = findMax(arr);
+        for (int i = 0; i < arr.length; i++) {
+            if( arr[i]==max){
+                arr[i]=Integer.MIN_VALUE;
+           
+            }
+            
+        } int secondMax = findMax(arr);
+        return secondMax;
+
+    }
+
+
+    static int firstRepeatingPair(int arr[]){
+        int ans=-1;
+        for (int i =0; i < arr.length; i++ ){
+            for(int j=i+1; j<arr.length; j++){
+                if (arr[i]==arr[j]){
+                     return arr[i];
+                    
+                }
+            }
+        } return ans;
+    }
+
+
+    static int[] swapTwoNumbers(int a , int b){
+        // Scanner sc= new Scanner(System.in);
+	    // System.out.println("enter a");
+	    // int a = sc.nextInt();
+	    // System.out.println("enter b");
+	    // int b = sc.nextInt();
+	    
+	    a = a+b;               
+	    b = a-b;
+	    a = a-b;
+	    System.out.println("a = "+a);
+ 		System.out.println("b = "+b);
+        return new int[] {a, b};
+        
+    }
+
+
+
 
 
 
     public static void main(String [] args){
 
         int t =12;
-        int arr [] ={1,4,5,6,3,3,6};
+        int arr [] ={3,4,6,3,4};
 
         // if(isSorted(arr, t)){
-        //     System.out.println("sorted");
+            // System.out.println("sorted");
         // }
 
-        findUnique(arr, t);
+        //System.out.println(firstRepeatingPair(arr));
+
+        Scanner sc= new Scanner(System.in);
+	    System.out.println("enter a");
+	    int a = sc.nextInt();
+	    System.out.println("enter b");
+	    int b = sc.nextInt();
+        System.out.println(swapTwoNumbers(a,b));
+
 
     }
 }
