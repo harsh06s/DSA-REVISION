@@ -32,13 +32,13 @@ public class practice{
             int[] ans = new int [n];
             k = k%n;
             int j = 0 ;
-            for (int i=n-k; i>n; i--){
-                ans[j] = ans[i];
+            for (int i=n-k; i<n; i++){
+                ans[j] = arr[i];
                 j++;
 
             }
             for (int i=0; i<n-k; i++){
-                ans[j] = ans[i];
+                ans[j] = arr[i];
                 j++;
 
             }return ans;
@@ -48,9 +48,9 @@ public class practice{
         int arr[] = {1,2,3,4,5};
         // reverseArray(arr);
         int t =3;
-        arrayRotations(arr, t);
-        for (int i=0; i<arr.length; i++) {
-            System.out.println(arr[i]);
+        int ans[] = arrayRotations(arr, t);
+        for (int i=0; i<ans.length; i++) {
+            System.out.println(ans[i]);
         }
 
 
