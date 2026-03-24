@@ -47,7 +47,7 @@ public class practice{
     public static void main(String[] args) {
         int arr[] = {1,2,3,4,5};
         // reverseArray(arr);
-        int t =3;
+        int t =4;
         int ans[] = arrayRotations(arr, t);
         for (int i=0; i<ans.length; i++) {
             System.out.println(ans[i]);
