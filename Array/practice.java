@@ -11,13 +11,13 @@ public class practice{
 
 
 
-    static void reverseArray(int arr[]){
-        int j = 0;
-        int i= arr.length-1;
-      while(i>j){
+    static void reverse(int arr[],int i,int j){
+        // int j = 0;
+        // int i= arr.length-1;
+      while(i<j){
         swapNumbers(i, j, arr);
-        ++j;
-        --i;
+        ++i;
+        --j;
 
 
       }
@@ -43,14 +43,26 @@ public class practice{
 
             }return ans;
         }
+
+
+
+        static void rotateInPlace(int arr[],int k){
+            int n = arr.length;
+            k= k%n;
+            reverse(arr, n-k, n-1);
+            reverse(arr, 0, n-k-1);
+            reverse(arr, 0, n-1);
+
+
+        }
     
     public static void main(String[] args) {
         int arr[] = {1,2,3,4,5};
         // reverseArray(arr);
-        int t =4;
-        int ans[] = arrayRotations(arr, t);
-        for (int i=0; i<ans.length; i++) {
-            System.out.println(ans[i]);
+        int t =2;
+        rotateInPlace(arr, t);
+        for (int i=0; i<arr.length; i++) {
+            System.out.println(arr[i]);
         }
 
 
