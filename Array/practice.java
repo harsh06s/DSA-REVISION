@@ -55,11 +55,25 @@ public class practice{
 
 
         }
+
+
+        static int[] makeFrequencyArr(int[] arr){
+            int freq [] = new int[100005];
+            for (int i=0; i<arr.length;i++){
+                freq[arr[i]]++;
+            } return freq;
+        }
+
+
+
+
+
+
     
     public static void main(String[] args) {
         int arr[] = {1,2,3,4,5};
         // reverseArray(arr);
-        int t =2;
+        int t =1002;
         rotateInPlace(arr, t);
         for (int i=0; i<arr.length; i++) {
             System.out.println(arr[i]);
