@@ -1,3 +1,5 @@
+import java .util.*;
+
 
 public class practice{
     static void swapNumbers(int i,int j,int arr[]){
@@ -74,10 +76,29 @@ public class practice{
         int arr[] = {1,2,3,4,5};
         // reverseArray(arr);
         int t =1002;
-        rotateInPlace(arr, t);
-        for (int i=0; i<arr.length; i++) {
-            System.out.println(arr[i]);
+        // rotateInPlace(arr, t);
+        // for (int i=0; i<arr.length; i++) {
+        //     System.out.println(arr[i]);
+        // }
+
+        Scanner sc = new Scanner(System.in);
+
+        int[] freq = makeFrequencyArr(arr);
+
+        System.out.println("enter a number of querries");
+        int q = sc.nextInt();
+        while(q>0){
+            System.out.println("enter element to be searched");
+            int x = sc.nextInt();
+            if (freq[x]>0){
+                System.out.println("yes");
+            }
+            else{
+                System.out.println("No");
+            }
+            q--;
         }
+
 
 
         
