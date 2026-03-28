@@ -1,4 +1,3 @@
-import java .util.*;
 
 
 public class practice{
@@ -68,39 +67,61 @@ public class practice{
 
 
 
+        static int[] sortArr(int[] arr){
+            int j=0;
+            for (int i = 0; i < arr.length; i++) {
+                if(arr[j]> arr[i]){
+                    arr[j]=arr[i];
+                    j++;
+                }
+
+                
+            }
+            return arr;
+        }
+
+
+
 
 
 
     
     public static void main(String[] args) {
-        int arr[] = {1,2,3,4,5};
+        int arr[] = {1,2,5,4,5};
         // reverseArray(arr);
         int t =1002;
         // rotateInPlace(arr, t);
-        // for (int i=0; i<arr.length; i++) {
-        //     System.out.println(arr[i]);
+
+        // Scanner sc = new Scanner(System.in);
+
+        // int[] freq = makeFrequencyArr(arr);
+
+        // System.out.println("enter a number of querries");
+        // int q = sc.nextInt();
+        // while(q>0){
+        //     System.out.println("enter element to be searched");
+        //     int x = sc.nextInt();
+        //     if (freq[x]>0){
+        //         System.out.println("yes");
+        //     }
+        //     else{
+        //         System.out.println("No");
+        //     }
+        //     q--;
         // }
 
-        Scanner sc = new Scanner(System.in);
 
-        int[] freq = makeFrequencyArr(arr);
 
-        System.out.println("enter a number of querries");
-        int q = sc.nextInt();
-        while(q>0){
-            System.out.println("enter element to be searched");
-            int x = sc.nextInt();
-            if (freq[x]>0){
-                System.out.println("yes");
-            }
-            else{
-                System.out.println("No");
-            }
-            q--;
+     //System.out.println(sortArr(arr));
+     for (int i=0; i<arr.length; i++) {
+            System.out.print(arr[i]);
+        }
+     System.out.println(sortArr(arr));
+     System.out.println("sorted array");
+     for (int i=0; i<arr.length; i++) {
+            System.out.print(arr[i]+ " ");
         }
 
-
-
-        
     }
+    
 }
