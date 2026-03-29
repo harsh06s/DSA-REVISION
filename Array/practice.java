@@ -19,8 +19,8 @@ public class practice{
         return;
     }
        arr[i] = arr[i]+arr[j]; 
-        arr[j] = arr[i]-arr[j];
-        arr[i]= arr[i]-arr[j];
+       arr[j] = arr[i]-arr[j];
+       arr[i]= arr[i]-arr[j];
 
     }
 
@@ -101,7 +101,7 @@ public class practice{
             int right = arr.length-1;
             while(lefft<right){
                 if (arr[lefft] == 1 && arr[right]==0){
-                    swapNumbers(arr[lefft], arr[right], arr);
+                    swapNumbers(lefft, right, arr);
                     lefft++;
                     right--;
                 }
