@@ -1,10 +1,26 @@
 
 
 public class practice{
+
+
+    static void printArray(int[] arr) {
+    
+    for (int num : arr) {
+        System.out.print(num + " ");
+    }
+    
+    System.out.println();
+}
+
+
+
     static void swapNumbers(int i,int j,int arr[]){
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j]= temp;
+        if (i == j) {
+        return;
+    }
+       arr[i] = arr[i]+arr[j]; 
+        arr[j] = arr[i]-arr[j];
+        arr[i]= arr[i]-arr[j];
 
     }
 
@@ -68,16 +84,34 @@ public class practice{
 
 
         static int[] sortArr(int[] arr){
-            int j=0;
-            for (int i = 0; i < arr.length; i++) {
+            for(int j=0;j<arr.length;j++){
+            for (int i =j+ 1; i < arr.length; i++) {
                 if(arr[j]> arr[i]){
-                    arr[j]=arr[i];
-                    j++;
+                    swapNumbers(i, j, arr);
+                    
                 }
 
                 
-            }
+            }}
             return arr;
+        }
+
+        static int[] sortZerosOnes(int[] arr){
+            int lefft = 0;
+            int right = arr.length-1;
+            while(lefft<right){
+                if (arr[lefft] == 1 && arr[right]==0){
+                    swapNumbers(arr[lefft], arr[right], arr);
+                    lefft++;
+                    right--;
+                }
+                if(arr[lefft]==0){
+                    lefft++;
+                }
+                if(arr[right]==1){
+                    right--;
+                }
+            } return arr;
         }
 
 
@@ -87,7 +121,7 @@ public class practice{
 
     
     public static void main(String[] args) {
-        int arr[] = {1,2,5,4,5};
+        int arr[] = {1,0,0,1};
         // reverseArray(arr);
         int t =1002;
         // rotateInPlace(arr, t);
@@ -113,14 +147,10 @@ public class practice{
 
 
      //System.out.println(sortArr(arr));
-     for (int i=0; i<arr.length; i++) {
-            System.out.print(arr[i]);
-        }
-     System.out.println(sortArr(arr));
+     printArray(arr);
+     System.out.println(sortZerosOnes(arr));
      System.out.println("sorted array");
-     for (int i=0; i<arr.length; i++) {
-            System.out.print(arr[i]+ " ");
-        }
+     printArray(arr);
 
     }
     
