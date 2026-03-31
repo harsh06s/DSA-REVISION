@@ -1,5 +1,4 @@
 
-
 public class practice{
 
 
@@ -118,10 +117,62 @@ public class practice{
 
 
 
+        static int[] sortEvenOdd(int[] arr){
+            int right= arr.length-1;
+            int left = 0;
+            while (right>left){
+                if (arr[left]%2== 1  &&  arr[right]%2 == 0){
+                    swapNumbers(left, right, arr);
+                    left ++;
+                    right --;
+                }
+                if (arr[left]%2 == 0){
+                    left++;
+                }
+                if (arr[right]%2!=0) {
+                    right--;
+                    
+                }
+
+            }return arr;
+        }
+
+
+
+
+
+
+        static int[]  sortedSquares(int[] arr){
+            int right= arr.length-1;
+            int left = 0;
+            int k =0;
+            int [] ans = new int [arr.length];
+            while (right>=left){
+                if (Math.abs(arr[left])>Math.abs(arr[right])) {
+                    ans[k++] = arr[left]*arr[left];
+                    left++;
+                } else {
+                    
+                    ans[k++]= arr[right]*arr[right];
+                    right --;
+                }
+
+            }
+            return ans;
+        }
+
+
+
+
+
+
+
+
+
 
     
     public static void main(String[] args) {
-        int arr[] = {1,0,0,1};
+        int arr[] = {-10,-4,0,1,2,5,11};
         // reverseArray(arr);
         int t =1002;
         // rotateInPlace(arr, t);
@@ -148,9 +199,10 @@ public class practice{
 
      //System.out.println(sortArr(arr));
      printArray(arr);
-     System.out.println(sortZerosOnes(arr));
+     int[] ans =sortedSquares(arr);
      System.out.println("sorted array");
-     printArray(arr);
+     reverse(ans, 0,arr.length-1);;
+     printArray(ans);
 
     }
     
