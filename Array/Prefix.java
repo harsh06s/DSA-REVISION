@@ -42,9 +42,19 @@ public class Prefix{
 
 
 public static void main(String[] args) {
-    int[] arr = {2,1,3,4,5};
-
     Scanner sc = new Scanner(System.in);
+    System.out.println("Enter the size of array");
+    int n = sc.nextInt(); 
+    int[] arr = new int[n + 1];
+    System.out.println("Enter " +n +" elements in array");
+
+    for (int i = 1; i <=n; i++) {
+        arr[i] = sc.nextInt();
+        
+    }
+    
+
+    
     
     int prefSum []=prefixArray(arr);
     System.out.println("Enter number of querries");
